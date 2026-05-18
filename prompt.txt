@@ -1,0 +1,62 @@
+Quiero una pagina web hecha con html y css sobre la saga de libro a court of thrones and roses, que te permita ver de que se trata el libro 
+si no lo conoces.
+
+Preciso un archivo index.html para el incio, que contenga la estructura basica de html (head y body) y otro style.css para todos los 
+estilos. Quiero que sea responsive.
+
+La pagina principal va a tener un menu de navegacion (nav) y el titulo de la serie (h1) con su logo en el header, este ultimo te tiene 
+que dejar ir al index, luego el titulo centrado "Por las estrellas que escuchan y los sueños que se hacen realidad" Abajo una imagen del 
+libro y 2 parrafos sobre que trata, eso dividido en 2 columnas. Tambien va a tener una seccion con la informacion de la autora (con una 
+imagen real de ella) y un footer con la informacion tipica de un sitio web (copyright, contacto, legales).
+
+La navegacion va a tener "libros" que se va a desplegar y tendras los 5 libros de la saga como opciones,"universo"que despliegue las 
+opciones: personajes, cortes, reinos, mapa interactivo, "comunidad" que se despliegue en: foro, fan fiction, gifts .
+
+El estilo de la pagina que sea moderno y colores dorados oscuros y elementos celestiales y estrellas
+
+
+ahora haceme este prompt que te di de una forma mas clara y que quede mas profesional la pagina , osea dame otra version de prompt 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Propuesta de Prompt Profesional
+Asunto: Desarrollo de Landing Page Premium para Saga Literaria (ACOTAR)
+Objetivo: Crear una interfaz web moderna, inmersiva y de alto impacto visual basada en la estética de la "Corte Noche" de Sarah J. Maas. La página debe ser totalmente responsive (Mobile First) y utilizar prácticas de código limpio.
+1. Identidad Visual (Look & Feel):
+
+Paleta de Colores: Fondo #05070a (negro profundo), detalles en #c5a059 (dorado metálico) y #1a1d23 para tarjetas.
+Atmósfera: Implementar un fondo con efecto de estrellas sutil (puedes usar un gradiente radial o un patrón de ruido).
+Tipografía: Usar Cinzel (Google Fonts) para títulos con letter-spacing amplio y Montserrat para el cuerpo de texto.
+2. Estructura de Navegación (Header):
+
+Header Sticky: Menú persistente con fondo semitransparente (backdrop-filter: blur).
+Brand: El logo y el h1 deben estar contenidos en un enlace funcional al index.html.
+Interactividad: Menús desplegables (Dropdowns) para:
+Libros: (Listar los 5 títulos).
+Universo: (Personajes, Cortes, Reinos, Mapa Interactivo).
+Comunidad: (Foro, Fan Fiction, Gifts).
+Efectos: Los enlaces deben tener un efecto de hover con una línea dorada que se expande desde el centro.
+3. Layout de la Página Principal (Main):
+
+Hero Section: El lema centralizado "Por las estrellas que escuchan..." debe aparecer con una animación de fundido (fade-in).
+Grid System: Una sección de introducción utilizando CSS Grid de 2 columnas:
+Izquierda: Imagen de la portada con un borde dorado fino y sombra suave.
+Derecha: Dos párrafos justificados con buen line-height explicando la sinopsis.
+Sección de Autor: Diseño tipo "Card" horizontal que destaque la imagen de Sarah J. Maas (enmarcada en un círculo o forma orgánica) y su biografía al lado.
+4. Pie de Página (Footer):
+
+Organización en 3 columnas: Créditos legales, Enlaces de contacto y Redes Sociales.
+Estilo minimalista con tipografía pequeña y color grisáceo suave.
+5. Requerimientos Técnicos:
+
+Tecnologías: HTML5 semántico y CSS3 puro (usando variables :root).
+Responsividad: Media queries optimizados para que en móviles el menú sea tipo "hamburguesa" o se adapte verticalmente, y el Grid pase a una sola columna.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+tengo esta pagina web. Quiero ahora generar una pagina de Contacto, tenerlo en otro archivo contacto.html
+Quiero que siga el mismo estilo de la pagina ya existente, y que utilice un formulario en el que pida nombre, mail, asunto y un boton para enviar como minimo. 
+En cada campo quiero que figure en gris los datos que tienen que poner enc ada cosa y cuando empiecen a escribir se borre. Y quiero que una vez que apretan enviar 
+figure algun mensaje de que fue enviado.

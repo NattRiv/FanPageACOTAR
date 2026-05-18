@@ -1,0 +1,153 @@
+
+/* ============================================
+   index.html — Tipografía de contenido
+   ============================================ */
+
+.text-col p,
+.author-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: justify;
+}
+
+.text-col p::first-letter,
+.author-text p::first-letter {
+    font-family: 'Italianno', serif;
+    color: var(--gold);
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-right: 4px;
+}
+
+
+/* ============================================
+   index.html — Sección frase principal
+   ============================================ */
+
+.phrase {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.main-quote {
+    font-family: 'Italianno', serif;
+    font-size: clamp(4rem, 8vw, 7rem);
+    letter-spacing: 0.8px;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.1;
+}
+
+
+/* ============================================
+   index.html — Resumen del libro
+   ============================================ */
+
+.book-summary {
+    padding: 60px 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.summary-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1.3fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.book-cover {
+    width: 80%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.45);
+}
+
+.text-col p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+
+/* ============================================
+   index.html — Sección autora
+   ============================================ */
+
+.author {
+    background-color: rgba(197, 160, 89, 0.05);
+    padding: 80px 5%;
+    margin: 40px 0;
+}
+
+.author-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.author-text h3 {
+    font-family: 'Italianno', serif;
+    color: var(--gold);
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.portrait {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+}
+
+.portrait:hover {
+    border-color: #fff;
+    filter: brightness(1.1);
+}
+
+
+
+
+
+/* ============================================
+   Media Queries (Responsive)
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    /* index.html */
+    .summary-container { grid-template-columns: 1fr; }
+
+    .author-card {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .portrait { width: 200px; height: 200px; }
+
+    /* contacto.html */
+    .contact-card { padding: 40px 28px; }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

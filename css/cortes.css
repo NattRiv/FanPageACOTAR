@@ -1,0 +1,139 @@
+.courts-page {
+    padding: 60px 8%;
+    min-height: 100vh;
+}
+
+.courts-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.courts-hero h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.courts-hero p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* CONTENEDOR */
+.courts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* CARD */
+.court-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    background: rgba(10, 14, 20, 0.92);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.court-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+}
+
+/* IMAGEN */
+.court-card img {
+    width: 420px;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.court-card:hover img {
+    transform: scale(1.03);
+}
+
+/* INFO */
+.court-info {
+    padding: 20px 30px 20px 0;
+}
+
+.court-info h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.court-info p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* LINK LIDER */
+.leader {
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+.leader a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.leader a:hover {
+    color: white;
+}
+
+/* LIGHTBOX */
+.gslide-description {
+    background: rgba(5, 7, 10, 0.95) !important;
+}
+
+.gslide-title {
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .court-card {
+        flex-direction: column;
+    }
+
+    .court-card img {
+        width: 100%;
+        height: 320px;
+    }
+
+    .court-info {
+        padding: 25px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .courts-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .court-card img {
+        height: 250px;
+    }
+
+}

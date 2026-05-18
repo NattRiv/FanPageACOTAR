@@ -1,0 +1,168 @@
+.characters-page {
+    padding: 60px 8%;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(5, 7, 10, 0.85), rgba(5, 7, 10, 0.92)),
+        url("../img/stars-bg.jpg") center/cover fixed;
+}
+
+.characters-hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.characters-hero h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.characters-hero p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* GRID */
+.characters-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* CARD */
+.character-card {
+    background: rgba(10, 14, 20, 0.92);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.character-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.25);
+}
+
+.character-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.character-card:hover img {
+    transform: scale(1.03);
+}
+
+.character-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    text-align: center;
+    margin: 18px 10px 10px;
+    font-size: 1.5rem;
+}
+
+/* DETAILS */
+.character-card details {
+    padding: 0 18px 20px;
+}
+
+.character-card summary {
+    cursor: pointer;
+    color: var(--text-white);
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.character-card summary:hover {
+    color: var(--gold);
+}
+
+.character-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ── SECCIÓN VILLANOS ─────────────────────────────── */
+
+/* Borde rojo oscuro para cards de villanos */
+.villain-card {
+    border-color: rgba(180, 40, 40, 0.4);
+}
+
+.villain-card:hover {
+    box-shadow: 0 0 20px rgba(180, 40, 40, 0.3);
+}
+
+.villain-card h3 {
+    color: #c0392b;
+}
+
+.villain-card summary:hover {
+    color: #c0392b;
+}
+
+
+/* GLIGHTBOX */
+.gslide-description {
+    background: rgba(5, 7, 10, 0.95) !important;
+}
+
+.gslide-title {
+    font-family: 'Cinzel', serif !important;
+    color: var(--gold) !important;
+    font-size: 1.6rem !important;
+}
+
+.gslide-desc {
+    color: var(--text-white) !important;
+    line-height: 1.6 !important;
+}
+
+.gslide-description details {
+    cursor: pointer;
+    color: var(--text-white);
+}
+
+.gslide-description summary {
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.gslide-description summary:hover {
+    color: var(--gold);
+}
+
+.gslide-description details p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .characters-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .characters-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .characters-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .character-card img {
+        height: 360px;
+    }
+}

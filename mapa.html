@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACOTAR Saga | Fan Portal</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/mapa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Italianno&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-area">
+                    <img src="./img/logo.png" alt="Logo ACOTAR" class="logo">
+                    <h1>Acotar Fan Page</h1>
+                </div>
+            </a>
+            
+        <div class="menu-toggle" id="menu-toggle">
+    ☰
+        </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Libros</a>
+                        <ul class="submenu">
+                            <li><a href="#">A Court of Thorns and Roses</a></li>
+                            <li><a href="#">A Court of Mist and Fury</a></li>
+                            <li><a href="#">A Court of Wings and Ruin</a></li>
+                            <li><a href="#">A Court of Frost and Starlight</a></li>
+                            <li><a href="#">A Court of Silver Flames</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Universo</a>
+                        <ul class="submenu">
+                            <li><a href="personajes.html">Personajes</a></li>
+                            <li><a href="cortes.html">Cortes</a></li>
+                            <li><a href="mapa.html">Mapa Interactivo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contacto.html" class="dropbtn">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="map-page">
+
+    <section class="map-hero">
+        <h2>Mapa Interactivo de Prythian</h2>
+        <p>
+            Explorá el mundo de ACOTAR y descubrí cada reino, corte y territorio.
+        </p>
+    </section>
+
+
+    <!-- MAPA -->
+
+    <div class="map-container">
+        <section class="map-section">
+
+            <div id="map-wrapper">
+
+                <div id="map">
+
+                    <img src="img/mapa.jpg" alt="Mapa Prythian">
+
+                    <!-- NIGHT COURT -->
+                    <button class="map-point purple" style="top: 36%; left: 28.7%;"
+                        data-title="Velaris"
+                        data-description="Ciudad oculta conocida como “La Ciudad de la Luz Estelar”. 
+                        Es el centro artístico y cultural de la Corte Noche, protegida durante siglos del resto del mundo."></button>
+
+                    <button class="map-point purple" style="top: 28.5%; left: 35.6%;"
+                        data-title="Montañas Ilyrias"
+                        data-description="Región montañosa donde viven y entrenan los guerreros ilirios. 
+                        Es el lugar de origen de Cassian, Azriel y Rhysand."></button>
+
+                    <button class="map-point purple" style="top: 38.2%; left: 38.6%;"
+                        data-title="Corte de las pesadillas"
+                        data-description="Ciudad subterránea gobernada mediante miedo y poder. 
+                        Representa la fachada cruel de la Corte Noche ante el resto de Prythian."></button>
+
+                    <button class="map-point purple" style="top: 31.7%; left: 31.9%;"
+                        data-title="La prision"
+                        data-description="Isla fortaleza utilizada para encerrar criaturas antiguas y extremadamente peligrosas. 
+                        Tiene una conexión misteriosa con la magia antigua."></button>
+
+
+                    <!-- SPRING -->
+                    <button class="map-point green" style="top: 65.6%; left: 37.4%;"
+                        data-title="Corte Primavera"
+                        data-description="Territorio dominado por bosques, flores y magia de renovación. Es la corte gobernada por Tamlin."></button>
+
+
+                    <!-- SUMMER -->
+                    <button class="map-point blue" style="top: 60.6%; left: 34.9%;"
+                        data-title="Corte Verano"
+                        data-description="Corte costera llena de mares cálidos y palacios brillantes. 
+                        Destaca por su conexión con el agua y el comercio marítimo."></button>
+
+                    <button class="map-point blue" style="top: 59.7%; left: 30.1%;"
+                        data-title="Adriata"
+                        data-description="Capital de la Corte Verano, famosa por sus edificios blancos, puertos y canales rodeados por el océano."></button>
+
+                    <!-- AUTUMN -->
+                    <button class="map-point orange" style="top: 59.7%; left: 42.4%;"
+                        data-title="Corte Otoño"
+                        data-description="Territorio cubierto de bosques rojizos y fuego otoñal permanente. 
+                        Es una corte conocida por sus conflictos políticos, su ambiente hostil y por ser el lugar de origen de Lucien Vanserra."></button>
+
+                    <button class="map-point orange" style="top: 61.5%; left: 46.2%;"
+                        data-title="Casa del bosque"
+                        data-description="Cabaña aislada perteneciente a una antigua hechicera. 
+                        Es un lugar cargado de magia, pactos y secretos peligrosos."></button>
+
+                    <!-- WINTER -->
+                    <button class="map-point lightblue" style="top: 54.7%; left: 39.3%;"
+                        data-title="Corte invierno"
+                        data-description="Territorio helado cubierto de nieve y hielo eterno. 
+                        Sus habitantes poseen afinidad con el frío y la magia invernal."></button>
+
+                    <!-- DAY -->
+                    <button class="map-point yellow" style="top: 44.2%; left: 38.1%;"
+                        data-title="Corte dia"
+                        data-description="Territorio conocido por sus bibliotecas, conocimiento y 
+                        hechizos relacionados con la luz y la verdad. Es gobernado por Helion."></button>
+
+
+                    <!-- DAWN -->
+                    <button class="map-point pink" style="top: 48.6%; left: 39.9%;"
+                        data-title="Corte atardecer"
+                        data-description="Corte enfocada en la sanación, la arquitectura y el conocimiento científico. 
+                        Sus ciudades poseen estructuras brillantes y elegantes."></button>
+
+                    <button class="map-point pink" style="top: 52.1%; left: 42%;"
+                        data-title="Casa de la Tejedora"
+                        data-description="Cabaña aislada donde vive la Tejedora, una criatura antigua y aterradora 
+                        vinculada a objetos mágicos y secretos oscuros."></button>
+
+                    <button class="map-point pink" style="top: 51.8%; left: 37.8%;"
+                        data-title="Bajo la Montaña"
+                        data-description="Sistema subterráneo gobernado por Amarantha durante décadas. 
+                        Allí las cortes quedaron sometidas y Feyre enfrentó las pruebas."></button>
+
+                    <!-- HUMAN LANDS -->
+                    <button class="map-point red" style="top: 71.9%; left: 35.2%;"
+                        data-title="Tierras Humanas"
+                        data-description="Territorios humanos al sur del muro."></button>
+
+                    <button class="map-point red" style="top: 75.3%; left: 73.4%;"
+                        data-title="Tierras Humanas"
+                        data-description="Territorios humanos al sur del muro."></button>
+
+                    <button class="map-point red" style="top: 71.2%; left: 39.3%;"
+                        data-title="Aldea de feyre"
+                        data-description="Pequeña aldea pobre donde Feyre vivió con su familia antes de cruzar el muro hacia Prythian."></button>
+
+                    <button class="map-point red" style="top: 70.1%; left: 642.3%;"
+                        data-title="Palacio Hermanas Archeron"
+                        data-description="Residencia lujosa obtenida gracias a la riqueza entregada por 
+                        Tamlin a la familia Archeron después de llevarse a Feyre."></button>
+
+                    <button class="map-point red" style="top: 72.3%; left: 85.2%;"
+                        data-title="Scynthia"
+                        data-description="Scythia es uno de los reinos y territorios de las Tierras Mortales, 
+                        situado al este del Continente y gobernado por la reina Vassa."></button>
+
+                    <!-- HYBERN -->
+                    <button class="map-point dark" style="top: 58%; left: 21.2%;"
+                        data-title="Hybern"
+                        data-description="Isla gobernada por el Rey de Hybern."></button>
+
+
+                    <!-- EXTRA -->
+                    <button class="map-point white" style="top: 68.8%; left: 38%;"
+                        data-title="El muro"
+                        data-description="Barrera mágica que durante siglos separó el mundo 
+                        humano del mundo feérico para mantener la paz entre ambos."></button>
+
+                        <button class="map-point white" style="top: 69%; left: 76.2%;"
+                        data-title="El muro"
+                        data-description="Barrera mágica que durante siglos separó el mundo 
+                        humano del mundo feérico para mantener la paz entre ambos."></button>
+
+                    <!-- TERRITORIOS FEÉRICOS -->
+                    <button class="map-point brown" style="top: 22.6%; left: 78.5%;"
+                        data-title="Vallaham"
+                        data-description="Vallahan es un territorio feérico ubicado al 
+                        noroeste del Continente. Allí fue donde Ianthe y su familia huyeron 
+                        durante el reinado de terror de Amarantha."></button>  
+                    
+                    <button class="map-point brown" style="top: 27.5%; left: 66.4%;"
+                        data-title="Montesere"
+                        data-description="Montesere es un territorio de feéricos ubicado al 
+                        noroeste del Continente. Este territorio es conocido por su riqueza."></button> 
+
+                    <button class="map-point brown" style="top: 30%; left: 85.3%;"
+                        data-title="Rask"
+                        data-description="Rask es un territorio de feéricos ubicado al norte del 
+                        Continente. Es una región rica y con una gran población."></button> 
+
+                    <button class="map-point brown" style="top: 45.7%; left: 80.2%;"
+                        data-title="Lago de Koschei"
+                        data-description="En este lago se encuentra confinado Koschei, uno de los 
+                        Dioses Antiguos. Vassa, la sexta reina mortal, quedó ligada a este lago después 
+                        de ser maldecida por Koschei."></button> 
+
+                </div>
+
+            </div>
+        
+            <!-- POPUP -->
+            <div class="map-popup" id="map-popup">
+                <button id="popup-close">✕</button>
+                <h3 id="popup-title"></h3>
+                <p id="popup-description"></p>
+
+            </div>
+
+        </section>
+
+        <div class="map-controls">
+
+            <button id="zoom-in">+</button>
+
+            <button id="zoom-out">−</button>
+
+            <button id="fullscreen-btn">
+                ⛶
+            </button>
+
+        </div>
+
+        
+    </div>
+</main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 Acotar Fan Page. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-section">
+                <p>Contacto: <a href="mailto:info@velaris.com">info@acotar.com</a></p>
+            </div>
+            <div class="footer-section">
+                <p><a href="#">Legales</a> | <a href="#">Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- PANZOOM -->
+    <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+
+    <!-- Script propio -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

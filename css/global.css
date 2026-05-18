@@ -1,0 +1,207 @@
+/* ============================================
+   Variables para colores y fuentes
+   ============================================ */
+
+:root {
+    --gold: #c5a059;
+    --dark-gold: #8e6d31;
+    --night-blue: #0a0e14;
+    --deep-space: #05070a;
+    --text-white: #f4f4f4;
+    --text-muted: #b0b0b0;
+    --celestial-gradient: linear-gradient(135deg, #0a0e14 0%, #1a1d23 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--deep-space);
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--deep-space); }
+::-webkit-scrollbar-thumb { background: var(--dark-gold); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+
+/* ============================================
+   Header & Nav
+   ============================================ */
+
+header {
+    background-color: rgba(5, 7, 10, 0.95);
+    border-bottom: 1px solid var(--gold);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.logo-link { text-decoration: none; }
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    filter: sepia(1) saturate(5) hue-rotate(10deg);
+}
+
+h1 {
+    font-family: 'Italianno', serif;
+    color: var(--gold);
+    font-size: clamp(1.6rem, 4vw, 3.2rem);
+    letter-spacing: 3px;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* Dropdown */
+.dropdown { position: relative; }
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--night-blue);
+    border: 1px solid var(--gold);
+    min-width: 220px;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.submenu li a:hover { background-color: rgba(197, 160, 89, 0.1); }
+.dropdown:hover .submenu { display: block; }
+
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    background-color: #000;
+    padding: 40px 5%;
+    border-top: 1px solid var(--dark-gold);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+}
+
+.footer-section a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo{
+        width: 45px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: var(--gold);
+        cursor: pointer;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--night-blue);
+        border-top: 1px solid var(--gold);
+        gap: 0;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Submenú adaptado a móvil */
+    .submenu {
+        display: none;
+        position: static;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        padding-top: 10px;
+    }
+
+    .submenu li a { font-size: 0.95rem; opacity: 0.8; }
+    .dropdown:hover .submenu { display: none; }
+    .dropdown.active .submenu { display: block; }
+}

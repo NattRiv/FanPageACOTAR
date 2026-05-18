@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | ACOTAR Fan Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Italianno&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-area">
+                    <img src="./img/logo.png" alt="Logo ACOTAR" class="logo">
+                    <h1>Acotar Fan Page</h1>
+                </div>
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Libros</a>
+                        <ul class="submenu">
+                            <li><a href="#">A Court of Thorns and Roses</a></li>
+                            <li><a href="#">A Court of Mist and Fury</a></li>
+                            <li><a href="#">A Court of Wings and Ruin</a></li>
+                            <li><a href="#">A Court of Frost and Starlight</a></li>
+                            <li><a href="#">A Court of Silver Flames</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Universo</a>
+                        <ul class="submenu">
+                            <li><a href="personajes.html">Personajes</a></li>
+                            <li><a href="cortes.html">Cortes</a></li>
+                            <li><a href="mapa.html">Mapa Interactivo</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="contacto.html" class="dropbtn">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <h2 class="contact-title">Contacto</h2>
+        <p class="contact-subtitle">Escríbenos desde cualquier corte del reino</p>
+
+        <div class="contact-card">
+            <div class="corner-tl"></div>
+            <div class="corner-br"></div>
+
+            <!-- Formulario -->
+            <form id="form-wrapper" action="procesar.php" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required name="nombre" placeholder="Tu nombre" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Correo electrónico</label>
+                        <input type="email" id="mail" required name="mail" placeholder="tu@correo.com" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" required name="asunto" placeholder="¿Sobre qué nos escribís?" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" required name="mensaje" placeholder="Contanos lo que quieras..."></textarea>
+                </div>
+
+                <button class="btn-send" id="btn-send" type="submit">
+                    <span>Enviar mensaje</span>
+                </button>
+            </form>
+
+            <!-- Mensaje de éxito -->
+            <div class="success-overlay" id="success-overlay">
+                <div class="success-stars">✦ ✦ ✦</div>
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24">
+                        <polyline class="checkmark-path" points="4 12 9 17 20 7"/>
+                    </svg>
+                </div>
+                <p class="success-title">¡Mensaje enviado!</p>
+                <p class="success-message">Gracias por escribirnos. Te responderemos pronto desde las estrellas de Velaris.</p>
+                <div class="success-stars">✦ ✦ ✦</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 Acotar Fan Page. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-section">
+                <p>Contacto: <a href="mailto:info@acotar.com">info@acotar.com</a></p>
+            </div>
+            <div class="footer-section">
+                <p><a href="#">Legales</a> | <a href="#">Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
