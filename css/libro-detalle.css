@@ -1,0 +1,347 @@
+/* ============================================
+   libro-detalle.css — Páginas individuales de libro
+   ============================================ */
+
+.book-detail-page {
+    min-height: 100vh;
+}
+
+/* ============================================
+   HERO de cada libro (color de acento único)
+   ============================================ */
+
+.book-detail-hero {
+    padding: 70px 5% 60px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay de color por libro */
+.acotar-hero  { background: linear-gradient(135deg, #1a0e08 0%, #0a0e14 60%); }
+.acomaf-hero  { background: linear-gradient(135deg, #080e1a 0%, #0a0e14 60%); }
+.acowar-hero  { background: linear-gradient(135deg, #0d0a18 0%, #0a0e14 60%); }
+.acofas-hero  { background: linear-gradient(135deg, #071418 0%, #0a0e14 60%); }
+.acosf-hero   { background: linear-gradient(135deg, #18100a 0%, #0a0e14 60%); }
+
+.book-detail-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.book-detail-hero-inner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detail-cover {
+    width: 180px;
+    min-width: 180px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(197,160,89,0.3);
+    flex-shrink: 0;
+}
+
+.detail-hero-text {
+    padding-bottom: 6px;
+}
+
+.detail-number {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.detail-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    color: var(--text-white);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+}
+
+.detail-author {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   CUERPO DEL LIBRO
+   ============================================ */
+
+.book-detail-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 5% 80px;
+}
+
+.detail-section {
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+/* SINOPSIS */
+.sinopsis-section p {
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+/* LINKS inline a personajes/cortes */
+.inline-link {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(197, 160, 89, 0.5);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.inline-link:hover {
+    color: #e8c47a;
+    border-bottom-color: var(--gold);
+}
+
+/* ============================================
+   BANNER DE SPOILERS
+   ============================================ */
+
+.spoiler-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(180, 60, 40, 0.12);
+    border: 1px solid rgba(180, 60, 40, 0.5);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+}
+
+.spoiler-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #e07060;
+}
+
+.spoiler-banner strong {
+    display: block;
+    color: #e07060;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.spoiler-banner p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* SPOILER BLOCK (details/summary) */
+.spoiler-block {
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.spoiler-block > summary {
+    padding: 16px 22px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(197, 160, 89, 0.05);
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.spoiler-block > summary:hover {
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.spoiler-block > summary::before {
+    content: '▶';
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+.spoiler-block[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.spoiler-block::-webkit-details-marker { display: none; }
+
+.spoiler-content {
+    padding: 28px 24px;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.spoiler-content p {
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 18px;
+    font-size: 0.97rem;
+}
+
+.spoiler-content p:last-child {
+    margin-bottom: 0;
+}
+
+.spoiler-content em {
+    color: var(--text-white);
+    font-style: italic;
+}
+
+/* ============================================
+   FRASES
+   ============================================ */
+
+.frases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.frase-card {
+    margin: 0;
+    padding: 24px 22px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-left: 3px solid var(--gold);
+    background: rgba(197, 160, 89, 0.04);
+    border-radius: 0 4px 4px 0;
+    transition: background 0.25s, border-color 0.25s;
+}
+
+.frase-card:hover {
+    background: rgba(197, 160, 89, 0.09);
+    border-color: rgba(197, 160, 89, 0.5);
+    border-left-color: var(--gold);
+}
+
+.frase-card p {
+    color: var(--text-white);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.frase-card cite {
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    font-style: normal;
+    font-family: 'Cinzel', serif;
+}
+
+/* ============================================
+   NAVEGACIÓN ENTRE LIBROS
+   ============================================ */
+
+.book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    gap: 16px;
+}
+
+.book-nav-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    border-radius: 2px;
+}
+
+.book-nav-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(197, 160, 89, 0.06);
+}
+
+.book-nav-empty {
+    flex: 1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .book-detail-hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .detail-cover {
+        width: 140px;
+        min-width: 140px;
+        height: 210px;
+    }
+
+    .detail-title {
+        font-size: 1.5rem;
+    }
+
+    .frases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-nav {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .book-nav-btn {
+        text-align: center;
+    }
+}

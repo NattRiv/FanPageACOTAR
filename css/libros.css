@@ -1,0 +1,150 @@
+/* ============================================
+   libros.css — Página principal de la saga
+   ============================================ */
+
+/* HERO */
+.books-hero {
+    text-align: center;
+    padding: 80px 5% 50px;
+}
+
+.books-hero h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--gold);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.books-hero p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* GRID DE PORTADAS */
+.books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 5% 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.book-card {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Portada con overlay */
+.book-cover-wrap {
+    position: relative;
+    width: 220px;
+    height: 330px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(197, 160, 89, 0.2);
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.book-card:hover .book-cover-img {
+    transform: scale(1.05);
+}
+
+.book-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 7, 10, 0.92) 0%, rgba(5, 7, 10, 0.3) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.book-card:hover .book-overlay {
+    opacity: 1;
+}
+
+.btn-ver-mas {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgba(5, 7, 10, 0.6);
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-ver-mas:hover {
+    background: var(--gold);
+    color: var(--deep-space);
+}
+
+/* Info del libro */
+.book-info {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.book-number {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.book-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--text-white);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .books-grid {
+        gap: 30px;
+    }
+
+    .book-card {
+        width: 160px;
+    }
+
+    .book-cover-wrap {
+        width: 160px;
+        height: 240px;
+    }
+
+    /* En móvil el overlay siempre visible */
+    .book-overlay {
+        opacity: 1;
+    }
+}

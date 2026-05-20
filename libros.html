@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros | ACOTAR Fan Portal</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/libros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Italianno&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="index.html" class="logo-link">
+            <div class="logo-area">
+                <img src="./img/logo.png" alt="Logo ACOTAR" class="logo">
+                <h1>Acotar Fan Page</h1>
+            </div>
+        </a>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="libros.html" class="dropbtn">Libros</a>
+                    <ul class="submenu">
+                        <li><a href="libro-acotar.html">A Court of Thorns and Roses</a></li>
+                        <li><a href="libro-acomaf.html">A Court of Mist and Fury</a></li>
+                        <li><a href="libro-acowar.html">A Court of Wings and Ruin</a></li>
+                        <li><a href="libro-acofas.html">A Court of Frost and Starlight</a></li>
+                        <li><a href="libro-acosf.html">A Court of Silver Flames</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Universo</a>
+                    <ul class="submenu">
+                        <li><a href="personajes.html">Personajes</a></li>
+                        <li><a href="cortes.html">Cortes</a></li>
+                        <li><a href="mapa.html">Mapa Interactivo</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html" class="dropbtn">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="books-page">
+
+    <section class="books-hero">
+        <h2>La Saga</h2>
+        <p>Cinco libros. Un mundo que no vas a querer dejar.</p>
+    </section>
+
+    <section class="books-grid">
+
+        <article class="book-card">
+            <div class="book-cover-wrap">
+                <img src="img/acotar-cover.jpg" alt="A Court of Thorns and Roses" class="book-cover-img">
+                <div class="book-overlay">
+                    <a href="libro-acotar.html" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="book-number">Libro 1</span>
+                <h3 class="book-title">A Court of Thorns and Roses</h3>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <div class="book-cover-wrap">
+                <img src="img/acomaf-cover.jpg" alt="A Court of Mist and Fury" class="book-cover-img">
+                <div class="book-overlay">
+                    <a href="libro-acomaf.html" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="book-number">Libro 2</span>
+                <h3 class="book-title">A Court of Mist and Fury</h3>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <div class="book-cover-wrap">
+                <img src="img/acowar-cover.jpg" alt="A Court of Wings and Ruin" class="book-cover-img">
+                <div class="book-overlay">
+                    <a href="libro-acowar.html" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="book-number">Libro 3</span>
+                <h3 class="book-title">A Court of Wings and Ruin</h3>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <div class="book-cover-wrap">
+                <img src="img/acofas-cover.jpg" alt="A Court of Frost and Starlight" class="book-cover-img">
+                <div class="book-overlay">
+                    <a href="libro-acofas.html" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="book-number">Libro 3.1</span>
+                <h3 class="book-title">A Court of Frost and Starlight</h3>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <div class="book-cover-wrap">
+                <img src="img/acosf-cover.jpg" alt="A Court of Silver Flames" class="book-cover-img">
+                <div class="book-overlay">
+                    <a href="libro-acosf.html" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="book-number">Libro 4</span>
+                <h3 class="book-title">A Court of Silver Flames</h3>
+            </div>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <p>&copy; 2026 Acotar Fan Page. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-section">
+            <p>Contacto: <a href="mailto:info@acotar.com">info@acotar.com</a></p>
+        </div>
+        <div class="footer-section">
+            <p><a href="#">Legales</a> | <a href="#">Privacidad</a></p>
+        </div>
+    </div>
+</footer>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+
+</body>
+</html>

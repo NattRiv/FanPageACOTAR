@@ -282,80 +282,24 @@ if (map) {
 }
 
 
-//7. ===== BUSCADOR DE PERSONAJES =====
-(function () {
-    const input = document.getElementById('searchInput');
+// 7 & 8. ===== BUSCADORES + FILTRO DESDE URL =====
+
+function initBuscador({ inputId, clearBtnId, counterId, containerSelector, cardSelector, urlParam, singular, pluralF }) {
+    const input = document.getElementById(inputId);
     if (!input) return;
 
-    const clearBtn   = document.getElementById('clearBtn');
-    const counter    = document.getElementById('resultsCount');
-    const gallery    = document.querySelector('.characters-gallery');
-
-    // Mensaje de sin resultados
-    const noResults = document.createElement('p');
-    noResults.className = 'no-results-msg';
-    noResults.textContent = 'No se encontró ningún personaje con ese nombre.';
-    gallery.appendChild(noResults);
-
-    function filter() {
-        const q     = input.value.trim().toLowerCase();
-        const cards = gallery.querySelectorAll('.character-card');
-        let visible = 0;
-
-        cards.forEach(card => {
-            const name    = (card.querySelector('h3')?.textContent || '').toLowerCase();
-            const matches = name.includes(q);
-            card.classList.toggle('hidden-by-search', !matches);
-            if (matches) visible++;
-        });
-
-        clearBtn.style.display    = q.length ? 'block' : 'none';
-        noResults.style.display   = (q.length && visible === 0) ? 'block' : 'none';
-        counter.textContent       = q.length
-            ? (visible === 1 ? '1 personaje encontrado' : `${visible} personajes encontrados`)
-            : '';
-    }
-
-    input.addEventListener('input', filter);
-
-    clearBtn.addEventListener('click', function () {
-        input.value = '';
-        filter();
-        input.focus();
-    });
-})();
-
-//7. ===== FILTRO AUTOMÁTICO DESDE URL =====
-(function () {
-    const input = document.getElementById('searchInput');
-    if (!input) return; // solo corre en personajes.html
-
-    const params = new URLSearchParams(window.location.search);
-    const personaje = params.get('personaje');
-
-    if (personaje) {
-        input.value = personaje;
-        input.dispatchEvent(new Event('input')); // activa el filtro
-    }
-})();
-
-//8. ===== BUSCADOR DE CORTES =====
-(function () {
-    const input = document.getElementById('searchInputCortes');
-    if (!input) return;
-
-    const clearBtn  = document.getElementById('clearBtnCortes');
-    const counter   = document.getElementById('resultsCountCortes');
-    const container = document.querySelector('.courts-container');
+    const clearBtn  = document.getElementById(clearBtnId);
+    const counter   = document.getElementById(counterId);
+    const container = document.querySelector(containerSelector);
 
     const noResults = document.createElement('p');
     noResults.className = 'no-results-msg';
-    noResults.textContent = 'No se encontró ninguna corte con ese nombre.';
+    noResults.textContent = `No se encontró ningún/a ${singular} con ese nombre.`;
     container.appendChild(noResults);
 
     function filter() {
         const q     = input.value.trim().toLowerCase();
-        const cards = container.querySelectorAll('.court-card');
+        const cards = container.querySelectorAll(cardSelector);
         let visible = 0;
 
         cards.forEach(card => {
@@ -368,18 +312,43 @@ if (map) {
         clearBtn.style.display  = q.length ? 'block' : 'none';
         noResults.style.display = (q.length && visible === 0) ? 'block' : 'none';
         counter.textContent     = q.length
-            ? (visible === 1 ? '1 corte encontrada' : `${visible} cortes encontradas`)
+            ? (visible === 1 ? `1 ${singular} encontrado/a` : `${visible} ${pluralF} encontradas`)
             : '';
     }
 
     input.addEventListener('input', filter);
+    clearBtn.addEventListener('click', () => { input.value = ''; filter(); input.focus(); });
 
-    clearBtn.addEventListener('click', function () {
-        input.value = '';
+    // Filtro automático desde URL
+    const params = new URLSearchParams(window.location.search);
+    const valorURL = params.get(urlParam);
+    if (valorURL) {
+        input.value = valorURL;
         filter();
-        input.focus();
-    });
-})();
+    }
+}
+
+initBuscador({
+    inputId:           'searchInput',
+    clearBtnId:        'clearBtn',
+    counterId:         'resultsCount',
+    containerSelector: '.characters-gallery',
+    cardSelector:      '.character-card',
+    urlParam:          'personaje',
+    singular:          'personaje',
+    pluralF:           'personajes'
+});
+
+initBuscador({
+    inputId:           'searchInputCortes',
+    clearBtnId:        'clearBtnCortes',
+    counterId:         'resultsCountCortes',
+    containerSelector: '.courts-container',
+    cardSelector:      '.court-card',
+    urlParam:          'corte',
+    singular:          'corte',
+    pluralF:           'cortes'
+});
 
 // HELPER TEMPORAL: click en el mapa imprime las coordenadas en consola para poder modificar los puntos fácilmente sin tener que adivinar los porcentajes
 /*
