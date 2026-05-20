@@ -325,6 +325,61 @@ if (map) {
     });
 })();
 
+//7. ===== FILTRO AUTOMÁTICO DESDE URL =====
+(function () {
+    const input = document.getElementById('searchInput');
+    if (!input) return; // solo corre en personajes.html
+
+    const params = new URLSearchParams(window.location.search);
+    const personaje = params.get('personaje');
+
+    if (personaje) {
+        input.value = personaje;
+        input.dispatchEvent(new Event('input')); // activa el filtro
+    }
+})();
+
+//8. ===== BUSCADOR DE CORTES =====
+(function () {
+    const input = document.getElementById('searchInputCortes');
+    if (!input) return;
+
+    const clearBtn  = document.getElementById('clearBtnCortes');
+    const counter   = document.getElementById('resultsCountCortes');
+    const container = document.querySelector('.courts-container');
+
+    const noResults = document.createElement('p');
+    noResults.className = 'no-results-msg';
+    noResults.textContent = 'No se encontró ninguna corte con ese nombre.';
+    container.appendChild(noResults);
+
+    function filter() {
+        const q     = input.value.trim().toLowerCase();
+        const cards = container.querySelectorAll('.court-card');
+        let visible = 0;
+
+        cards.forEach(card => {
+            const name    = (card.querySelector('h3')?.textContent || '').toLowerCase();
+            const matches = name.includes(q);
+            card.classList.toggle('hidden-by-search', !matches);
+            if (matches) visible++;
+        });
+
+        clearBtn.style.display  = q.length ? 'block' : 'none';
+        noResults.style.display = (q.length && visible === 0) ? 'block' : 'none';
+        counter.textContent     = q.length
+            ? (visible === 1 ? '1 corte encontrada' : `${visible} cortes encontradas`)
+            : '';
+    }
+
+    input.addEventListener('input', filter);
+
+    clearBtn.addEventListener('click', function () {
+        input.value = '';
+        filter();
+        input.focus();
+    });
+})();
 
 // HELPER TEMPORAL: click en el mapa imprime las coordenadas en consola para poder modificar los puntos fácilmente sin tener que adivinar los porcentajes
 /*
