@@ -146,6 +146,110 @@
     margin-top: 8px;
 }
 
+/* ===== BUSCADOR ===== */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.1rem;
+    font-size: 1rem;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.9rem 3rem 0.9rem 2.9rem;
+    background: rgba(10, 14, 20, 0.92);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 50px;
+    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+    backdrop-filter: blur(8px);
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.search-input:focus {
+    border-color: var(--gold);
+    background: rgba(10, 14, 20, 0.98);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.search-clear {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 50%;
+    transition: color 0.2s ease, background 0.2s ease;
+    display: none;
+}
+
+.search-clear:hover {
+    color: var(--gold);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.search-results-count {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(197, 160, 89, 0.65);
+    letter-spacing: 0.05em;
+    min-height: 1.2em;
+    margin: 0;
+}
+
+/* Tarjeta oculta por búsqueda */
+.character-card.hidden-by-search {
+    display: none;
+}
+
+/* Mensaje sin resultados */
+.no-results-msg {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 1rem;
+    font-family: 'Cinzel', serif;
+    color: rgba(197, 160, 89, 0.5);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
     .characters-gallery {
@@ -165,4 +269,10 @@
     .character-card img {
         height: 360px;
     }
+
+    .search-section {
+        margin-bottom: 30px;
+    
+}
+
 }
